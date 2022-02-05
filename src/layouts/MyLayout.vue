@@ -20,7 +20,7 @@
 
           <img src="https://cdn.quasar.dev/img/layout-gallery/logo-google.svg">
           <router-link style="text-decoration: none;"
-                       to="/"> <span class="q-ml-sm">青云社区</span></router-link>
+                       to="/"> <span class="q-ml-sm">轻云社区</span></router-link>
 
         </q-toolbar-title>
 
@@ -409,7 +409,8 @@
       <q-page-sticky v-if="$q.screen.gt.sm"
                      expand
                      position="left">
-        <div class="fit q-pt-xl q-px-sm column">
+        <div class=" column fit q-pt-xl q-px-sm"
+             style="overflow:hidden">
 
           <q-btn v-for="link in links1"
                  :key="link.text"
@@ -442,8 +443,8 @@
 import { ref } from 'vue'
 import LAYOUT_DATA from '../mock/data/layout/layoutData'
 const stringOptions = [
-  { val: '登录', href: '/login', type: '热度：22092' },
-  { val: '注册', href: '/register', type: '热度：13212' },
+  { val: '登录', href: '/user/login', type: '热度：22092' },
+  { val: '注册', href: '/user/register', type: '热度：13212' },
   { val: '个人中心', href: '/account', type: '热度：10092' },
   { val: '设置', href: '/account/settings', type: '热度：1092' },
   {
@@ -491,12 +492,12 @@ export default {
         filteredOptions.value = [
           {
             label: val,
-            href: '/login',
+            href: '/user/login',
             type: 'In this repository',
           },
           {
             label: val,
-            href: '/register',
+            href: '/user/register',
             type: 'All GitHub',
           },
           ...options.value
@@ -524,9 +525,9 @@ export default {
       links1: [
         { icon: 'home', text: '首页', href: '/' },
         { icon: 'photo_album', text: '探索', href: '/home' },
-        { icon: 'assistant', text: 'Assistant', href: '/register' },
-        { icon: 'login', text: '登录', href: '/login' },
-        { icon: 'assistant', text: '注册', href: '/register' },
+        { icon: 'assistant', text: '测试', href: '/test' },
+        { icon: 'login', text: '登录', href: '/user/login' },
+        { icon: 'assistant', text: '注册', href: '/user/register' },
         { icon: 'home', text: '个人中心', href: '/account' },
         { icon: 'settings', text: '设置', href: '/account/settings' },
       ],

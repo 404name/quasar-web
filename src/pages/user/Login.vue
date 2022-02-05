@@ -5,10 +5,8 @@
 
     <div class="row base-card-shadow"
          style="width: 60vw;min-width: 300px;">
-      <div class="col-5 flex justify-center items-center"
+      <div class="col-5 flex justify-center items-center q-pr-lg"
            v-show="$q.screen.gt.sm">
-        <h3 class="text-uppercase"
-            v-show="$q.screen.gt.sm">轻云社区</h3>
         <q-skeleton type="text"
                     height="70%"
                     width="50%"
@@ -19,15 +17,15 @@
                          @isLottieFinish="handleFinish" />
       </div>
       <q-separator vertical
-                   inset
+                   class="q-pl-sm"
                    v-if="$q.screen.gt.sm" />
-      <div class="col flex justify-center items-center q-pl-lg">
+      <div class="col flex justify-center items-center">
         <q-card square
                 style="min-width: 290px;height: 100%; width: 100%;"
                 class="no-shadow">
           <q-card-section align="center">
             <h3 class="text-uppercase"
-                v-show="$q.screen.gt.sm">注册</h3>
+                v-show="$q.screen.gt.sm">轻云社区</h3>
             <div class="col-12 flex justify-center items-center"
                  style="height: 30vh"
                  v-show="!$q.screen.gt.sm">
@@ -42,7 +40,7 @@
                      standout="bg-cyan text-white"
                      bottom-slots
                      v-model="username"
-                     label="邮箱">
+                     label="账号">
               <template v-slot:prepend>
                 <q-icon name="account_circle" />
               </template>
@@ -52,25 +50,16 @@
                      standout="bg-cyan text-white"
                      bottom-slots
                      v-model="password"
-                     label="验证码"
+                     label="密码"
+                     :type="isPwd ? 'password' : 'text'"
                      hint="">
               <template v-slot:prepend>
                 <q-icon name="vpn_key" />
               </template>
-
-              <template v-slot:after>
-                <q-btn outline
-                       style="font-size: large;"
-                       :loading="validateCodeLoading"
-                       @click="getVerifyCode"
-                       color="secondary"
-                       label="获取验证码">
-                  <template v-slot:loading>
-                    <q-icon name="alarm"
-                            class="on-left" />
-                    {{ count }} s
-                  </template>
-                </q-btn>
+              <template v-slot:append>
+                <q-icon :name="isPwd ? 'visibility_off' : 'visibility'"
+                        class="cursor-pointer"
+                        @click="isPwd = !isPwd" />
               </template>
             </q-input>
 
@@ -81,15 +70,19 @@
                    unelevated
                    label=""
                    style="font-size: large;"
-                   @click="logon">确认注册
+                   @click="logon">登 录 系 统
             </q-btn>
-            <template v-slot:after></template>
-            <div class="row justify-between">
+            <div class="row justify-between"
+                 style="margin-bottom: 20px;">
               <q-btn flat
+                     to="/user/forget"
                      label="忘记密码" />
-              <q-btn flat
-                     label="已有账号登录" />
+              <q-btn outline
+                     to="/user/register"
+                     label="我要注册" />
             </div>
+            <p class="text-grey"
+               align="left">账号2 ：test &nbsp;&nbsp;&nbsp;&nbsp;密码均为空</p>
           </q-card-section>
         </q-card>
       </div>

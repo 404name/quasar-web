@@ -19,15 +19,15 @@
                          @isLottieFinish="handleFinish" />
       </div>
       <q-separator vertical
-                   inset
+                   class="q-pl-sm"
                    v-if="$q.screen.gt.sm" />
-      <div class="col flex justify-center items-center q-pl-lg">
+      <div class="col flex justify-center items-center ">
         <q-card square
                 style="min-width: 290px;height: 100%; width: 100%;"
                 class="no-shadow">
           <q-card-section align="center">
             <h3 class="text-uppercase"
-                v-show="$q.screen.gt.sm">注册</h3>
+                v-show="$q.screen.gt.sm">忘记密码</h3>
             <div class="col-12 flex justify-center items-center"
                  style="height: 30vh"
                  v-show="!$q.screen.gt.sm">
@@ -86,9 +86,11 @@
             <template v-slot:after></template>
             <div class="row justify-between">
               <q-btn flat
-                     label="忘记密码" />
+                     to="/user/login"
+                     label="登录" />
               <q-btn flat
-                     label="已有账号登录" />
+                     to="/user/register"
+                     label="注册" />
             </div>
           </q-card-section>
         </q-card>

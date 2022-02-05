@@ -5,6 +5,7 @@
 
     <div class="row base-card-shadow"
          style="width: 60vw;min-width: 300px;">
+
       <div class="col-5 flex justify-center items-center"
            v-show="$q.screen.gt.sm">
         <h3 class="text-uppercase"
@@ -19,9 +20,9 @@
                          @isLottieFinish="handleFinish" />
       </div>
       <q-separator vertical
-                   inset
+                   class="q-pl-sm"
                    v-if="$q.screen.gt.sm" />
-      <div class="col flex justify-center items-center q-pl-lg">
+      <div class="col flex justify-center items-center">
         <q-card square
                 style="min-width: 290px;height: 100%; width: 100%;"
                 class="no-shadow">
@@ -86,8 +87,11 @@
             <template v-slot:after></template>
             <div class="row justify-between">
               <q-btn flat
+                     to="/user/forget"
                      label="忘记密码" />
+
               <q-btn flat
+                     to="/user/login"
                      label="已有账号登录" />
             </div>
           </q-card-section>
