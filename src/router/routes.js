@@ -1,26 +1,41 @@
-const routes = [
-  {
+const routes = [{
     path: "/",
     // 可以设置不同的布局
     component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/Index.vue") },
-      { path: "test", component: () => import("pages/Test.vue") },
-      { path: "login", component: () => import("pages/login/Index.vue") },
-      { path: "about", component: () => import("pages/About.vue") },
-      { path: "home", component: () => import("pages/module/Home.vue") },
+    children: [{
+        path: "",
+        component: () => import("pages/Index.vue")
+      },
+      {
+        path: "test",
+        component: () => import("pages/Test.vue")
+      },
+      {
+        path: "login",
+        component: () => import("pages/login/Index.vue")
+      },
+      {
+        path: "about",
+        component: () => import("pages/About.vue")
+      },
+      {
+        path: "home",
+        component: () => import("pages/module/Home.vue")
+      },
     ],
   },
   {
     path: "/user",
     // 可以设置不同的布局
-    component: () => import("layouts/MainLayout.vue"),
-    children: [
-      {
+    component: () => import("layouts/GithubLayout.vue"),
+    children: [{
         path: "register",
         component: () => import("src/pages/user/Register.vue"),
       },
-      { path: "login", component: () => import("src/pages/user/Login.vue") },
+      {
+        path: "login",
+        component: () => import("src/pages/user/Login.vue")
+      },
       {
         path: "forget",
         component: () => import("src/pages/user/Forget.vue"),
@@ -31,8 +46,7 @@ const routes = [
     path: "/account",
     // 可以设置不同的布局
     component: () => import("layouts/MainLayout.vue"),
-    children: [
-      {
+    children: [{
         path: "",
         component: () => import("pages/account/Home.vue"),
       },
@@ -40,7 +54,10 @@ const routes = [
         path: "settings",
         component: () => import("pages/account/Settings.vue"),
       },
-      { path: "home", component: () => import("pages/account/Home.vue") },
+      {
+        path: "home",
+        component: () => import("pages/account/Home.vue")
+      },
     ],
   },
 

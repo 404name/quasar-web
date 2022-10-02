@@ -9,7 +9,7 @@
       <div class="col-5 flex justify-center items-center"
            v-show="$q.screen.gt.sm">
         <h3 class="text-uppercase"
-            v-show="$q.screen.gt.sm">轻云社区</h3>
+            v-show="$q.screen.gt.sm">GuideHub</h3>
         <q-skeleton type="text"
                     height="70%"
                     width="50%"

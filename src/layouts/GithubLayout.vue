@@ -220,7 +220,7 @@ import { fabGithub } from '@quasar/extras/fontawesome-v5'
 const stringOptions = ['组队的', '达瓦达瓦达瓦大/quasar-awesome']
 
 export default {
-  name: 'MyLayout',
+  name: 'GithubLayout',
 
   setup() {
     const text = ref('')

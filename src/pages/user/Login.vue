@@ -25,7 +25,7 @@
                 class="no-shadow">
           <q-card-section align="center">
             <h3 class="text-uppercase"
-                v-show="$q.screen.gt.sm">轻云社区</h3>
+                v-show="$q.screen.gt.sm">GuideHub</h3>
             <div class="col-12 flex justify-center items-center"
                  style="height: 30vh"
                  v-show="!$q.screen.gt.sm">

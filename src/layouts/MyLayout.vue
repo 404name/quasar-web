@@ -20,7 +20,7 @@
 
           <img src="https://cdn.quasar.dev/img/layout-gallery/logo-google.svg">
           <router-link style="text-decoration: none;"
-                       to="/"> <span class="q-ml-sm">轻云社区</span></router-link>
+                       to="/"> <span class="q-ml-sm">GuideHub</span></router-link>
 
         </q-toolbar-title>
 
@@ -339,7 +339,7 @@
           <q-toolbar-title class="row items-center text-grey-8">
             <img class="q-pl-md"
                  src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg">
-            <span class="q-ml-sm">青云社区</span>
+            <span class="q-ml-sm">GuideHub</span>
           </q-toolbar-title>
         </q-toolbar>
 
